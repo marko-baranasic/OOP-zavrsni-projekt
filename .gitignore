@@ -1,0 +1,42 @@
+# ==========================================================
+#  .gitignore for the WorkoutLog Java project
+# ==========================================================
+
+# --- Compiled Java bytecode ---
+# .class files are produced from .java source by the compiler.
+# They can always be regenerated, so they do not belong in the repository.
+*.class
+
+# --- Build / output directories ---
+# IntelliJ compiles into /out; other tools use the folders below.
+/out/
+/bin/
+/build/
+/target/
+
+# --- IntelliJ IDEA files ---
+# IDE settings are specific to each developer's machine, not part of the source.
+.idea/
+*.iml
+
+# --- Eclipse files ---
+.classpath
+.project
+.settings/
+
+# --- Visual Studio Code files ---
+.vscode/
+
+# --- Log files ---
+*.log
+
+# --- Temporary / backup / operating-system files ---
+*.tmp
+*.bak
+*~
+.DS_Store
+Thumbs.db
+
+# --- Application runtime data ---
+# The serialized workout file is generated while the app runs and is not source code.
+*.dat
