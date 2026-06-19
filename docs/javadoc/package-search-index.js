@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html","k":"18"},{"l":"hr.unizd.workoutlog"},{"l":"hr.unizd.workoutlog.gui"},{"l":"hr.unizd.workoutlog.logic"},{"l":"hr.unizd.workoutlog.model"}];updateSearchResults();

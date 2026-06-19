@@ -28,25 +28,43 @@ import java.io.IOException;
  */
 public class MainWindow extends JFrame {
 
+    /** The workout log that holds all workout data. */
     private WorkoutLog workoutLog;
 
+    /** Input field for the exercise name. */
     private JTextField nameField;
+    /** Input field for the workout duration in minutes. */
     private JTextField durationField;
+    /** Drop-down for choosing the day of the week. */
     private JComboBox<String> dayCombo;
+    /** Radio button for "light" intensity. */
     private JRadioButton lightButton;
+    /** Radio button for "medium" intensity. */
     private JRadioButton mediumButton;
+    /** Radio button for "hard" intensity. */
     private JRadioButton hardButton;
+    /** Checkbox marking the workout as cardio. */
     private JCheckBox cardioCheckBox;
+    /** Checkbox marking the workout as strength. */
     private JCheckBox strengthCheckBox;
+    /** Text area for an optional note. */
     private JTextArea noteArea;
+    /** Button that adds the entered workout to the log. */
     private JButton addButton;
 
+    /** Model backing the workout list (holds the displayed lines). */
     private DefaultListModel<String> listModel;
+    /** List component showing all logged workouts. */
     private JList<String> workoutList;
+    /** Button that deletes the selected workout. */
     private JButton deleteButton;
+    /** Label showing the total number of workouts. */
     private JLabel totalCountLabel;
+    /** Label showing the total minutes across all workouts. */
     private JLabel totalMinutesLabel;
+    /** Label showing the number of cardio workouts. */
     private JLabel cardioCountLabel;
+    /** Label showing the number of strength workouts. */
     private JLabel strengthCountLabel;
 
     /**

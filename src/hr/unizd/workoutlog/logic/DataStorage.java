@@ -31,6 +31,13 @@ public class DataStorage {
     private static final String EXPORT_FILE = "workouts_export.txt";
 
     /**
+     * Private constructor to prevent instantiation.
+     * This is a utility class that only provides static methods.
+     */
+    private DataStorage() {
+    }
+
+    /**
      * Saves the list of workouts to a binary file using Java serialization.
      * <p>
      * The entire list is written as a single object. The file is created if it

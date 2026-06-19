@@ -18,6 +18,13 @@ import javax.swing.*;
 public class Main {
 
     /**
+     * Private constructor to prevent instantiation.
+     * This class only provides the static {@code main} entry point.
+     */
+    private Main() {
+    }
+
+    /**
      * Starts the application.
      *
      * @param args command-line arguments (not used in this application)
