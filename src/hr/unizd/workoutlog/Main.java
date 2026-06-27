@@ -4,7 +4,7 @@ import hr.unizd.workoutlog.gui.MainWindow;
 import hr.unizd.workoutlog.logic.DataStorage;
 import hr.unizd.workoutlog.logic.WorkoutLog;
 
-import javax.swing.*;
+import javax.swing.SwingUtilities;
 
 /**
  * Entry point of the WorkoutLog application.
@@ -30,7 +30,7 @@ public class Main {
      * @param args command-line arguments (not used in this application)
      */
     public static void main(String[] args) {
-        WorkoutLog workoutLog = new WorkoutLog();
+        final WorkoutLog workoutLog = new WorkoutLog();
 
         try {
             workoutLog.getWorkouts().addAll(DataStorage.load());
@@ -39,7 +39,12 @@ public class Main {
             System.err.println("Could not load saved data: " + e.getMessage());
         }
 
-        final WorkoutLog finalLog = workoutLog;
-        SwingUtilities.invokeLater(() -> new MainWindow(finalLog));
+        // GUI se pokreće na Swing dretvi (EDT) kroz anonimni Runnable (bez lambde).
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                new MainWindow(workoutLog);
+            }
+        });
     }
 }
