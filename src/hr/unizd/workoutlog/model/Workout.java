@@ -234,21 +234,28 @@ public class Workout implements Serializable {
     /**
      * Returns a concise, human-readable summary of this workout.
      * <p>
-     * This is the text displayed in the {@code JList} on the right panel
-     * of the application. The format is:
+     * This is the text displayed in the {@code JList} on the right panel and
+     * written to the text export. The format is:
      * <pre>
-     *   Running | Monday | 30 min | Medium | Cardio
+     *   Running | Monday | 30 min | Medium | Cardio | Note: felt great
      * </pre>
      * The category part shows "Cardio", "Strength", "Cardio + Strength",
-     * or "None" depending on which boxes were checked.
+     * or "None" depending on which boxes were checked. The note part is
+     * appended only when a note was actually entered.
      *
      * @return formatted one-line summary of the workout
      */
     @Override
     public String toString() {
         String category = buildCategory();
-        return exerciseName + " | " + dayOfWeek + " | " + durationMinutes
+        String summary = exerciseName + " | " + dayOfWeek + " | " + durationMinutes
                 + " min | " + intensity.getDisplayName() + " | " + category;
+
+        // Bilješka je neobavezna — dodaj je na kraj samo ako je upisana.
+        if (!note.isEmpty()) {
+            summary = summary + " | Note: " + note;
+        }
+        return summary;
     }
 
     /**
